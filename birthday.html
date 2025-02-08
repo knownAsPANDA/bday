@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Birthday Invite</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input, button {
+            padding: 10px;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Enter Your Instagram Username or Email</h1>
+    <input type="text" id="userInput" placeholder="IG Username or Email">
+    <button onclick="checkInvite()">Check Invite</button>
+    <p id="message"></p>
+
+    <script>
+        const invitedUsers = ["egshglnz", "guest2", "example@gmail.com"]; 
+        
+        function checkInvite() {
+            const userInput = document.getElementById("userInput").value.toLowerCase();
+            const message = document.getElementById("message");
+            
+            if (invitedUsers.includes(userInput)) {
+                message.innerHTML = "🎉 You are invited! Check your inbox for details.";
+                message.style.color = "green";
+            } else {
+                message.innerHTML = "❌ Sorry, you are not on the invite list.";
+                message.style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>
